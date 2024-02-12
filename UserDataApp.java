@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -36,13 +36,16 @@ public class UserDataApp {
             }
             
             if (split.length == 6){
+                Date = split[3];
+                phoneNumber = split[4];
+                your_gender = split[5];
+                } else {
                 throw new ArrayCountElementException("Вы ввели не все данные или\n" +
                 "Вы пропустили пробел");  
-        }
-  
-            String output = name + firstName + middleName + Date + " " + phoneNumber + your_gender;
-            FileWriter fileWriter = new FileWriter(split + ".txt");
-            fileWriter.write(output);
+            }
+            String output = name + firstName + middleName + Date + " " + phoneNumber + your_gender + ".txt";
+            FileWriter fileWriter = new FileWriter(output, true);
+            fileWriter.write(output+"\n");
             fileWriter.close();
         } catch (IOException e) {
             System.out.println("Ошибка! Не удалось создать файл.");
@@ -56,3 +59,7 @@ public class UserDataApp {
     
         }
 }
+        
+        
+    
+        
