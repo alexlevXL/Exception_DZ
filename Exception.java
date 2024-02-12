@@ -11,4 +11,11 @@ class ArrayCountElementException extends RuntimeException{
         super(message);
     }
 }
+class CheckDateFormat extends RuntimeException{
+    public CheckDateFormat(String message) {
+        super(message);
 }
+}
+
+}
+
